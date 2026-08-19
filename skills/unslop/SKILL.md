@@ -1,6 +1,6 @@
 ---
 name: unslop
-description: Cut AI tells from any writing. Must always apply.
+description: Use when writing or editing any prose a human will read: commit messages, PR descriptions, docs, code comments, changelogs, user-facing copy, or chat replies. Applies to all written output by default, not only when the user asks to remove AI tells or slop.
 ---
 
 # Unslop
