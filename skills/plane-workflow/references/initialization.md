@@ -71,29 +71,17 @@ Call `list_labels` with the `project_id`. Record what comes back. An empty resul
 is a real answer — record the empty table so later sessions know not to invent
 labels rather than re-checking.
 
-## 6. Record the verification gates
+## 6. Point at the shipping config
 
-These come from the repository, not from Plane. Look for the project's test and
-check commands in `package.json` scripts, `Makefile`, `justfile`, `pyproject.toml`,
-CI workflow files, or the project's own agent instructions.
+Verification gates and branch flow are not recorded here — they belong to
+`.claude/shipping-changes.md` and the `shipping-changes` skill, so that the two
+skills can't disagree about what "green" means or which branch PRs target.
 
-List the commands you found, say what each covers, and ask the user to confirm
-and order them. Note any gate that is known-broken or has a coverage gap — the
-lifecycle needs that written down, because a gap the agent can't see is a gap it
-will paper over.
+Check whether that file exists. If it doesn't, say so and offer to initialize
+`shipping-changes` too. If the project doesn't use that skill, record the gate
+commands and the integration branch in the config's fallback section.
 
-## 7. Record the branch flow
-
-Infer from the repo, then confirm:
-
-- **Integration branch** — what PRs target. Check the default branch, and whether
-  a long-lived `develop`/`development`/`staging` branch exists that recent merge
-  commits actually went into.
-- **Working branch** — the naming pattern in `git branch -a` and recent history,
-  or `direct` if commits land on the integration branch without a PR.
-- **PR required** — whether recent commits arrived via merge commits or directly.
-
-## 8. Write the config
+## 7. Write the config
 
 Fill in [config-template.md](config-template.md) and write it to
 `.claude/plane-workflow.md` in the project root. Create `.claude/` if needed.

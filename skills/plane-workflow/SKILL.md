@@ -26,18 +26,16 @@ up the actual state in the config. Never move a ticket to a state by name alone.
 ## Per work item, in order
 
 1. **Move it to the `start` state** — before touching code, not after.
-2. **Do the work and confirm it.** Run every verification gate in the config, in
-   order. Where a gate is recorded as broken or as having a coverage gap, say so
-   explicitly and treat the gap as uncovered — the remaining gates do not cover
-   it. Smoke-test where it matters. If the project has its own commit/PR skill,
-   use it for the verify → commit → PR path.
-3. **Get the change onto the integration branch** the way the config records.
-   Where that means a working branch plus a PR: commit, merge the integration
-   branch in, resolve conflicts, **re-run the gates on the merged tree**, then
-   push and open the PR — that order, every time. A green run on the pre-merge
-   tree says nothing about the tree you're actually shipping. Commit-only if the
-   user asked to batch a multi-task push; the sync belongs to whichever task
-   pushes.
+2. **Do the work and confirm it.** Run the project's verification gates and get
+   the change onto the integration branch using the `shipping-changes` skill —
+   it owns the branch model, the gate list, and the pull-before-push order, and
+   its config records where a gate has a known coverage gap. Where a gate can't
+   cover your change, say so explicitly rather than treating the rest as
+   covering it. Smoke-test where it matters.
+3. **Don't skip the sync.** `shipping-changes` requires merging the integration
+   branch in and re-running the gates on the merged tree before you push. Commit
+   without pushing only if the user asked to batch a multi-task push; the sync
+   then belongs to whichever task actually pushes.
 4. **Spawn anything noteworthy as a new work item** — vestigial code paths, UX
    gaps, deprecated branches, follow-ups you flagged but didn't fix. Each one
    references the originating ticket and the commit hash that surfaced it.

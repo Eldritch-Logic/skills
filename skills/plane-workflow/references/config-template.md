@@ -48,21 +48,19 @@ Full list, for moves the lifecycle doesn't cover.
 | ---------- | ---------- | ----- |
 | | | |
 
-## Verification gates
+## Verification gates and branch flow
 
-Commands that must pass before a work item leaves `start`. Run in order.
+Not recorded here. They live in `.claude/shipping-changes.md`, owned by the
+`shipping-changes` skill, because they are git concerns rather than tracker
+concerns and both skills need the same answer.
 
-| Command | Covers | Notes |
-| ------- | ------ | ----- |
-| | | |
-
-## Branch flow
+If that file doesn't exist, initialize `shipping-changes` first. If the project
+doesn't use that skill at all, record the gate commands and the integration
+branch below and say so, so the next session doesn't go looking.
 
 | Field | Value |
 | ----- | ----- |
-| Integration branch | branch PRs target |
-| Working branch | pattern, or `direct` if commits go straight to the integration branch |
-| PR required | yes / no |
+| Shipping config | `.claude/shipping-changes.md`, or `not used — see below` |
 
 ## Labels
 
