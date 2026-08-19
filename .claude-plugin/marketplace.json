@@ -1,0 +1,22 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "eldritchlogic",
+  "description": "EldritchLogic's marketplace of agent skills, subagents, slash commands, and workflows",
+  "owner": {
+    "name": "Vincenzo Fehring",
+    "email": "vincenzo@cleartalk.ai"
+  },
+  "plugins": [
+    {
+      "name": "eldritchlogic",
+      "description": "EldritchLogic's agent toolkit: skills, subagents, slash commands, and workflows for agentic development",
+      "version": "0.1.0",
+      "source": "./",
+      "category": "productivity",
+      "author": {
+        "name": "Vincenzo Fehring",
+        "email": "vincenzo@cleartalk.ai"
+      }
+    }
+  ]
+}

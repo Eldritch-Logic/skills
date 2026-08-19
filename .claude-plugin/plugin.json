@@ -1,0 +1,13 @@
+{
+  "name": "eldritchlogic",
+  "version": "0.1.0",
+  "description": "EldritchLogic's agent toolkit: skills, subagents, slash commands, and workflows for agentic development",
+  "author": {
+    "name": "Vincenzo Fehring",
+    "email": "vincenzo@cleartalk.ai"
+  },
+  "homepage": "https://github.com/EldritchLogic/skills",
+  "repository": "https://github.com/EldritchLogic/skills",
+  "license": "MIT",
+  "keywords": ["skills", "agents", "commands", "workflows", "agentic"]
+}
